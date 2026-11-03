@@ -34,7 +34,7 @@
     
     --font-heading: 'Cinzel', serif;
     --font-sans: 'Plus Jakarta Sans', sans-serif;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 html[data-theme="light"] {
@@ -77,18 +77,8 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ── Universal View Transitions & Page Entrance/Exit Animations ── */
-@view-transition {
-    navigation: auto;
-}
-
 body {
     background-color: var(--bg-dark);
-    background-image: 
-        radial-gradient(at 10% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-        radial-gradient(at 90% 80%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.08) 0px, transparent 50%);
-    background-attachment: fixed;
     color: var(--text-body);
     font-family: var(--font-sans);
     line-height: 1.6;
@@ -96,24 +86,23 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    animation: pageEnter 0.07s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    position: relative;
 }
 
-body.page-exit {
-    opacity: 0 !important;
-    transform: translateY(-2px) !important;
-    transition: opacity 0.05s ease-out, transform 0.05s ease-out !important;
-}
-
-@keyframes pageEnter {
-    from {
-        opacity: 0;
-        transform: translateY(3px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* GPU-accelerated fixed ambient background layer (zero repaint during scroll) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(at 10% 20%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 90% 80%, rgba(245, 158, 11, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(14, 165, 233, 0.08) 0px, transparent 50%);
 }
 
 /* Hide obsolete h9 text element visually while remaining accessible */
@@ -495,7 +484,6 @@ b, strong {
     margin: 0 auto 3rem auto;
     padding: 0 2.5rem 2.5rem 2.5rem;
     background: var(--bg-glass-card);
-    backdrop-filter: blur(16px);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);

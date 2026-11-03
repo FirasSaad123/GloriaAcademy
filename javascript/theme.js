@@ -24,8 +24,13 @@
     // Apply instantly before DOM renders
     applyResponsiveTheme();
 
-    // Re-check on window resize
-    window.addEventListener('resize', applyResponsiveTheme);
+    // Re-check only when crossing mobile/desktop responsive breakpoint (zero-cost listener)
+    const mql = window.matchMedia('(max-width: 900px)');
+    if (mql.addEventListener) {
+        mql.addEventListener('change', applyResponsiveTheme);
+    } else {
+        window.addEventListener('resize', applyResponsiveTheme);
+    }
 
     function updateToggleButton(btn, theme) {
         if (!btn) return;
@@ -130,45 +135,6 @@
     }
 })();
 
-/**
- * Smooth Page Transition Interceptor
- * Intercepts navigation to internal .htm pages to animate page exit & entry
- */
-(function () {
-    function initPageTransitions() {
-        if (window._pageTransitionsBound) return;
-        window._pageTransitionsBound = true;
 
-        document.addEventListener('click', function (e) {
-            const anchor = e.target.closest('a');
-            if (!anchor) return;
-
-            const href = anchor.getAttribute('href');
-            const target = anchor.getAttribute('target');
-
-            // Skip anchor fragments, javascript/mailto/tel links, external tabs, or missing hrefs
-            if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:') || target === '_blank') {
-                return;
-            }
-
-            // Ensure destination is an internal link (.htm page or relative route)
-            const isInternal = !href.includes('://') || href.includes(window.location.hostname);
-            if (!isInternal) return;
-
-            e.preventDefault();
-            document.body.classList.add('page-exit');
-
-            setTimeout(function () {
-                window.location.href = href;
-            }, 60);
-        });
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initPageTransitions);
-    } else {
-        initPageTransitions();
-    }
-})();
 
 
