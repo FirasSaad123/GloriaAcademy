@@ -28,12 +28,12 @@
                 </td>
                 <td style="text-align: center;">
                     <a href="journal.htm">
-                        <button class="Journal header-journal-btn">📖 Gloria for International Multidisciplinary Studies</button>
+                        <button class="Journal header-journal-btn">Gloria for International Multidisciplinary Studies</button>
                     </a>
                 </td>
                 <td style="text-align: right; display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem;">
                     <a href="index.htm">
-                        <button class="contactus">🏠 Home</button>
+                        <button class="contactus">Home</button>
                     </a>
                     <button id="theme-toggle" class="theme-toggle-btn">🌙 Dark Mode</button>
                     <a href="aboutus.htm">
@@ -42,8 +42,8 @@
                     <div class="dropdown">
                         <button class="contactus">Contact Us</button>  
                         <div class="dropdown-content">
-                            <a href="tel:+96170605396">📞 +961 70 605 396</a>
-                            <a href="mailto:gims-journal@gloria-leb.org">✉️ gims-journal@gloria-leb.org</a>
+                            <a href="tel:+96170605396">+961 70 605 396</a>
+                            <a href="mailto:gims-journal@gloria-leb.org">gims-journal@gloria-leb.org</a>
                         </div>
                     </div>
                 </td>
@@ -76,10 +76,7 @@
         <!-- Leadership & Team Section -->
         <section style="margin-top: 3rem;">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <span style="display: inline-block; background: rgba(245, 158, 11, 0.15); color: var(--primary-gold); font-size: 0.85rem; font-weight: 700; padding: 0.4rem 1.2rem; border-radius: var(--radius-full); margin-bottom: 0.5rem; border: 1px solid var(--border-accent);">
-                    Academic Leadership
-                </span>
-                <h2 style="font-size: 2rem; color: var(--text-heading); margin: 0;">Our Executive Leadership & Faculty</h2>
+<h2 style="font-size: 2rem; color: var(--text-heading); margin: 0;">Our Executive Leadership & Faculty</h2>
             </div>
 
             <!-- Profile 1: Dr. Ghada M. Awada -->
@@ -92,7 +89,7 @@
                             <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">International Arbitrator & Fulbright Scholar</p>
                         </div>
                     </div>
-                    <button onclick="toggleBio('bio-ghada', this)" class="DRS_text" aria-expanded="false">📖 View Full Biography</button>
+                    <button onclick="toggleBio('bio-ghada', this)" class="DRS_text" aria-expanded="false">View Full Biography</button>
                 </div>
                 <div id="bio-ghada" class="bio-container" style="display: none; margin-top: 1.5rem;">
                     <p class="pa">Dr. Ghada M. Awada - International Arbitrator and Fulbright Scholar at North Carolina State University (NCSU-2016). First female recipient of the American University of Beirut (AUB) Excellence Service Award (2018) and recipient of Lebanese American University (LAU)-CEP excellence award (2014).</p>
@@ -111,7 +108,7 @@
                             <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Head of English Dept, CRDP & Curriculum Specialist</p>
                         </div>
                     </div>
-                    <button onclick="toggleBio('bio-loubna', this)" class="Lubna_text" aria-expanded="false">📖 View Full Biography</button>
+                    <button onclick="toggleBio('bio-loubna', this)" class="Lubna_text" aria-expanded="false">View Full Biography</button>
                 </div>
                 <div id="bio-loubna" class="bio-container" style="display: none; margin-top: 1.5rem;">
                     <p class="pan">• Head of the English Department at the Center for Educational Research and Development (CRDP)</p>
@@ -156,12 +153,12 @@
             if (isHidden) {
                 bio.classList.remove('closing');
                 bio.style.display = 'block';
-                btn.innerHTML = '🙈 Hide Biography';
+                btn.innerHTML = 'Hide Biography';
                 btn.setAttribute('aria-expanded', 'true');
             } else {
                 bio.classList.add('closing');
                 btn.setAttribute('aria-expanded', 'false');
-                btn.innerHTML = '📖 View Full Biography';
+                btn.innerHTML = 'View Full Biography';
 
                 setTimeout(function () {
                     bio.style.display = 'none';
