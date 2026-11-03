@@ -176,10 +176,6 @@ header, .site-header {
     transition: var(--transition);
 }
 
-.mainupper:hover {
-    transform: scale(1.03);
-}
-
 /* Centered & Slightly Larger GIMS Journal Button */
 .Journal, .header-journal-btn {
     display: inline-flex;
@@ -204,7 +200,6 @@ header, .site-header {
 
 .Journal:hover, .header-journal-btn:hover {
     background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
-    transform: translateY(-2px) scale(1.03);
     box-shadow: 0 6px 22px rgba(245, 158, 11, 0.55);
 }
 
@@ -231,7 +226,6 @@ header, .site-header {
     background: rgba(255, 255, 255, 0.18);
     border-color: var(--primary-gold);
     color: var(--primary-gold) !important;
-    transform: translateY(-2px);
 }
 
 /* Secondary Navigation Row (.row1) */
@@ -514,10 +508,6 @@ b, strong {
     transition: var(--transition);
 }
 
-.ghada:hover {
-    transform: scale(1.02);
-}
-
 /* Search Bar Component */
 .search-container {
     display: flex;
@@ -561,7 +551,6 @@ b, strong {
 }
 
 .submit:hover {
-    transform: translateY(-2px);
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
 }
 
@@ -829,7 +818,6 @@ b, strong {
     background: rgba(245, 158, 11, 0.2);
     color: var(--primary-gold);
     border-color: var(--border-accent);
-    transform: scale(1.08);
 }
 
 .hamburger-btn:active {

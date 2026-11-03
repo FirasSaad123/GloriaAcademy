@@ -65,10 +65,6 @@
     transition: var(--transition);
 }
 
-.Drs:hover {
-    transform: scale(1.05);
-}
-
 /* Toggle Expand/Collapse Buttons */
 .DRS_text, .DRS_text_other, .Lubna_text, .Lubna_text_other {
     font-family: var(--font-sans);
